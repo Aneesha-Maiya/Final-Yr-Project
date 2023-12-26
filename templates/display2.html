@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2> My first name is - {{firstname}}</h2>
+        <h2> My last name is - {{lastname}}</h2>
+        <h2> My full name is - {{fullname}}</h2>
+        <div>
+            <p>The template generated for given VideoID {{videoId}}</p>
+            <p>{{Transcript}}</p>
+            <p>Length of transcript = {{transcript_length}}</p>
+            <p>Time Taken to generate transcript is: {{timeTakenT/1000}} ms</p>
+        </div>
+        <div>
+            <p>The Summary generated for given VideoID {{videoId}}</p>
+            <button id="summaryBtn">Generate Summary</button>
+            <p id="summaryText">Summary: </p>
+            <p id="summaryLength">Length of transcript: </p>
+            <p id="summaryTime">Time Taken to generate summary is:</p>
+        </div>
+        <script src="../static/displaySummary.js"></script>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+</html>
