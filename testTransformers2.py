@@ -133,8 +133,8 @@ def produce_summary(index):
           for x in chunk:
               if x == " ":
                   word_count = word_count + 1
-          if(word_count > 100):
-              summary = generate_summary(chunk.lower(),word_count,0.6)
+          if(word_count > 50):
+              summary = generate_summary(chunk.lower(),word_count,0.5)
               summary = summary.lower()
               for token in nltk.word_tokenize(summary):
                 if token not in string.punctuation:
@@ -201,20 +201,7 @@ print(f"\nTrying getSummary and calculate_Rouge_as_number functions for 10 items
 temp1 = []
 skip = 0
 # temp2 = np.array()
-for i in range(10,30):
-   long_text_length = 0
-   long_text = df.loc[i]['ctext']
-   for x in long_text:
-      if x == " ":
-         long_text_length = long_text_length + 1
-   if(long_text_length < 500):
-    rouge_values = calculate_Rouge_as_number(i,'')
-    temp1.append(rouge_values)
-   else:
-      print(f"Skipped {i} item")
-      skip = skip + 1
-      pass
-for i in range(30,30+skip):
+for i in range(0,10):
    rouge_values = calculate_Rouge_as_number(i,'')
    temp1.append(rouge_values)
 # print(temp1[0])
@@ -235,8 +222,8 @@ print(f"reference summary lengths: {rsumm_lens}")
 def plotTimeVsLen():
    xpoints = np.array(long_text_len_values)
    ypoints = np.array(time_values)
-   xpoints = np.sort(xpoints,axis=None)
-   ypoints = np.sort(ypoints,axis=None)
+#    xpoints = np.sort(xpoints,axis=None)
+#    ypoints = np.sort(ypoints,axis=None)
    plt.title("Time Taken(generate summary) vs length (input text)")
    plt.xlabel("Length of input text")
    plt.ylabel("Time taken in seconds")
