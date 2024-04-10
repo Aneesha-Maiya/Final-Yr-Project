@@ -2,7 +2,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from datetime import datetime
 
 start = datetime.now()
-video_id = 'oOiHDxGBcPE'
+video_id = 'oV74Najm6Nc'
 transcript_len = 0
 transcript1 = YouTubeTranscriptApi.get_transcript(video_id)
 transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
